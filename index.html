@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+
+        }
+
+
+        ::-webkit-scrollbar {
+            width: 0;
+        }
+
+        .box {
+            width: 600px;
+            margin: 0 auto;
+            background-color: #eee;
+            height: 100vh;
+        }
+
+        h3 {
+            height: 40px;
+            line-height: 40px;
+            background-color: gray;
+            color: #fff;
+            text-align: center;
+        }
+
+        .content {
+            height: calc(100% - 40px - 50px);
+            overflow-y: scroll;
+        }
+
+        .sendBox {
+            height: 50px;
+            background-color: #ddd;
+            line-height: 50px;
+            text-align: center;
+        }
+
+        .myMes {
+            margin: 5px 10px;
+            /* width: 100%; */
+            /* text-align: right; */
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .robotMes {
+            width: 100%;
+            margin: 5px 10px;
+        }
+
+        .myMes .avator {
+            width: 30px;
+            height: 30px;
+            background-image: url('./img/3.png');
+            background-size: 100% 100%;
+            float: right;
+        }
+
+        .text {
+            border-radius: 5px;
+            padding: 0 10px;
+            line-height: 30px;
+            background-color: greenyellow;
+            position: relative;
+            max-width: 50%;
+        }
+
+        .myMes .text {
+            float: right;
+            margin-right: 5px;
+
+        }
+
+        .myMes .text::after {
+            position: absolute;
+            content: "";
+            right: -10px;
+            top: 10px;
+            width: 0;
+            height: 0;
+            border: 5px solid transparent;
+            border-left-color: greenyellow;
+        }
+
+        .robotMes .avator {
+            width: 30px;
+            height: 30px;
+            background-image: url('./img/dog1.jpg');
+            background-size: 100%;
+            float: left;
+        }
+
+        .robotMes .text {
+            margin-left: 5px;
+            background-color: #fff;
+            float: left;
+        }
+
+        .robotMes .text::before {
+            position: absolute;
+            content: "";
+            left: -10px;
+            top: 10px;
+            width: 0;
+            height: 0;
+            border: 5px solid transparent;
+            border-right-color: #fff;
+        }
+
+
+        .sendBox #send-input {
+            width: 500px;
+            height: 30px;
+        }
+
+        .sendBox #send-btn {
+            width: 80px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h3>聊天机器人</h3>
+        <div class="content">
+            <div class="myMes clearfix">
+                <div class="avator"></div>
+                <div class="text">今天你吃了吗</div>
+            </div>
+            <div class="robotMes clearfix">
+                <div class="avator"></div>
+                <div class="text">吃饱了</div>
+            </div>
+        </div>
+        <div class="sendBox">
+            <input id="send-input" type="text" style="padding: 0 5px;">
+            <button id="send-btn">发送</button>
+        </div>
+    </div>
+    <script src="./ajax.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
